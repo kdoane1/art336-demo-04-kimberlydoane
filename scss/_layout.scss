@@ -14,6 +14,8 @@ the elements that are common across all components of the page
 and use class selectors where appropriate.
 */
 
+//CHANGE THE LAYOUT
+
 nav[role="navigation"] {
     background-color: $color;
     margin-bottom: $gutters;
@@ -57,9 +59,85 @@ header[role="banner"] {
     //inserting a background img
     background: url('../img/seattle.jpg') no-repeat center center;
     background-size: cover;
+    line-height: 300px;
+    @media (max-width:480px) {
+        line-height: 150px;
+    }
     height: 300px;
+    @media (max-width:480px) {
+        height: 150px;
+    }
+    margin: 0;
     width: auto;
-    opacity: .5;
+    text-align: center;
+    
+    //opacity: .5;
+}
+
+.branding, .interactive, .marketing {
+    //background-color: lighten($color,30%);
+    box-sizing: border-box;
+    float: left;
+    //margin: 0 $gutters;
+    //padding: 0 $gutters;
+    text-align: justify;
+    width: 33.333333%;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+    //margin-bottom: $gutters*2;
+}
+
+.branding {
+    padding: $gutters  $gutters/2 $gutters 0;
+    @media (max-width: 768px) {
+        padding: $gutters 0 $gutters/2 0;
+    }
+    //padding: top right bottom left;
+}
+
+.interactive {
+    padding:$gutters $gutters/2 $gutters $gutters/2;
+    @media (max-width: 768px) {
+        padding: $gutters/2 0;
+    }
+}
+
+.marketing {
+    padding: $gutters 0 $gutters $gutters/2;
+    @media (max-width: 768px) {
+        padding: $gutters/2 0 $gutters 0;
+    }
+}
+
+.inner {
+    background-color: lighten($color,30%);
+    min-height: 200px;
+}
+
+footer[role="contentinfo"] {
+    background-color: $color;
+    color: #fff;
+    float: left;
+}
+
+.contentinfo-social, .contentinfo-about {
+    box-sizing: border-box;
+    float: left;
+}
+
+.contentinfo-social {
+    width: 30%;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+}
+
+.contentinfo-about{
+    width: 70%;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 }
 
 //clears float *make sure you add class to code
@@ -68,3 +146,4 @@ header[role="banner"] {
     content: "";
     display: table;
 }
+
